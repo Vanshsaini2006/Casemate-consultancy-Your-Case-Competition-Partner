@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials - CaseMate</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .navbar {
+            background: white;
+            border-radius: 15px;
+            padding: 15px 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #3498db;
+        }
+
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .section h1 {
+            color: #2c3e50;
+            font-size: 2.8em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .section h2 {
+            color: #2c3e50;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .testimonial-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border-left: 5px solid #27ae60;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            font-size: 4em;
+            color: #27ae60;
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-family: serif;
+        }
+
+        .testimonial-text {
+            font-size: 1.1em;
+            font-style: italic;
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-top: 20px;
+            padding-left: 20px;
+        }
+
+        .author-info h4 {
+            color: #2c3e50;
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+
+        .author-details {
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+
+        .competition-highlight {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .testimonial-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 10px;
+            margin: 20px auto;
+            display: block;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .image-caption {
+            text-align: center;
+            font-style: italic;
+            color: #7f8c8d;
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+
+        .rating {
+            color: #f39c12;
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            display: block;
+            color: #3498db;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+            color: white;
+            text-align: center;
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 30px;
+        }
+
+        .cta-section h3 {
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .nav-links {
+                gap: 20px;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+            
+            .section h1 {
+                font-size: 2.2em;
+            }
+            
+            .section h2 {
+                font-size: 1.8em;
+            }
+
+            .testimonial-card {
+                padding: 20px;
+            }
+
+            .testimonial-image {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="logo">CaseMate</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+            </ul>
+        </nav>
+
+        <!-- Testimonials Section -->
+        <div class="section">
+            <h1>What Our Partners Say</h1>
+            <p style="text-align: center; font-size: 1.1em; color: #7f8c8d; margin-bottom: 30px;">
+                Real feedback from students who have achieved success with CaseMate consultancy
+            </p>
+
+            <!-- Featured Testimonial -->
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    "Working with Vansh through CaseMate was absolutely crucial for our victory at The Nexus Clash. When we got the case about building a secure online transaction system for a retail chain, I honestly felt overwhelmed by the complexity and the tight 3-hour deadline. That's when Vansh stepped in as both a teammate and strategic consultant.
+                    
+                    His approach was methodical and brilliant. While I was still trying to understand the problem fully, he had already started structuring our solution using frameworks I'd never heard of. His financial expertise really showed when he led the cost-effectiveness analysis for different cybersecurity solutions. The way he evaluated tokenization, multi-layered authentication, and cloud security upgrades with such precision was impressive.
+                    
+                    But what really made the difference was his presentation skills. In just 3 hours, he transformed our rough ideas into a compelling 4-slide presentation that told a clear story. The judges were visibly impressed with our financial feasibility analysis and strategic roadmap. When we won 1st place out of 200+ teams, I knew it was largely because of Vansh's structured approach and expertise.
+                    
+                    The ₹200 consultancy fee was the best investment we made. His 40% share of our winnings was completely justified - without him, we wouldn't have won anything. I'd recommend CaseMate to any team serious about winning case competitions."
+                </div>
+                
+                <div class="testimonial-author">
+                    <div class="author-info">
+                        <h4>Manan Garg</h4>
+                        <div class="author-details">
+                            Team Partner • The Nexus Clash Winner<br>
+                            Daulat Ram College Competition • March 2025
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+                
+                <!-- Success Photo -->
+                <img src="testimonial-photo.png" alt="Vansh and Manan with their competition certificates" class="testimonial-image">
+                <p class="image-caption">Vansh Saini (left) and Manan Garg (right) celebrating their competition success with certificates</p>
+                
+                <div class="competition-highlight">
+                    <h4>🏆 Competition Result</h4>
+                    <p><strong>1st Place</strong> out of 200+ teams | <strong>Competition:</strong> The Nexus Clash, Daulat Ram College</p>
+                    <p><strong>Challenge:</strong> Secure online transaction system for retail chain | <strong>Timeline:</strong> 3 hours</p>
+                </div>
+            </div>
+
+            <!-- Success Statistics -->
+            <h2>Our Impact in Numbers</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">7</span>
+                    <span>Podium Finishes</span>
+                    <small>National-level wins</small>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">15+</span>
+                    <span>National Finals</span>
+                    <small>Consistent performance</small>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">200+</span>
+                    <span>Teams Competed Against</span>
+                    <small>High-stakes environments</small>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">100%</span>
+                    <span>Client Satisfaction</span>
+                    <small>Results-driven approach</small>
+                </div>
+            </div>
+
+            <!-- Key Success Factors -->
+            <h2>Why Teams Choose CaseMate</h2>
+            <div class="testimonial-card" style="border-left-color: #3498db;">
+                <div class="testimonial-text">
+                    "The combination of Vansh's financial expertise (FRM Part 1 and CFA Level 1) with his real competition experience is unmatched. He doesn't just give generic advice - he provides specific, actionable strategies that have been proven to work against top-tier competition."
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-info">
+                        <h4>Anonymous Team Captain</h4>
+                        <div class="author-details">National-level Case Competition Finalist</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card" style="border-left-color: #e74c3c;">
+                <div class="testimonial-text">
+                    "What sets CaseMate apart is the revenue-sharing model. Knowing that Vansh only succeeds when we succeed creates a partnership that's genuinely invested in our performance. It's not just consulting - it's true collaboration."
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-info">
+                        <h4>Student Team Member</h4>
+                        <div class="author-details">Multiple Competition Participant</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="cta-section">
+                <h3>Ready to Join Our Success Stories?</h3>
+                <p>Transform your case competition performance with proven strategies and expert guidance. Whether you need quick consultancy or full team partnership, let's discuss your next competition strategy.</p>
+                <div style="margin-top: 20px;">
+                    <a href="mailto:sainivansh161@gmail.com" style="background: white; color: #27ae60; padding: 15px 30px; text-decoration: none; border-radius: 25px; font-weight: bold; margin: 0 10px;">📧 Get Started Today</a>
+                    <a href="https://linkedin.com/in/vansh-saini" target="_blank" style="background: white; color: #27ae60; padding: 15px 30px; text-decoration: none; border-radius: 25px; font-weight: bold; margin: 0 10px;">💼 Connect on LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
